@@ -26,23 +26,26 @@ export default function BlogPosts() {
           .map((post) => (
             <Link
               key={post.slug}
-              className="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80 hover:underline"
+              className="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80 p-4 rounded-md bg-blue-500/5 outline outline-1 outline-blue-500/20 hover:scale-105"
               href={`/blog/${post.slug}`}
             >
-              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <div>
+              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                {/* Title and Summary */}
+                <div className="flex-1 hover:underline">
                   <p className="text-black dark:text-white tracking-tight">
-                  {post.metadata.title}
+                    {post.metadata.title}
                   </p>
-                  <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                  <p className="hover:underline text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
                     {post.metadata.summary}
                   </p>
                 </div>
-                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                {/* Date */}
+                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm sm:ml-4">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
               </div>
             </Link>
+
           ))}
       </div>
     </section>
