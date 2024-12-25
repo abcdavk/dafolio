@@ -18,7 +18,7 @@ export default function Projects() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block group hover:opacity-80 transition-opacity duration-200 hover:underline"
+            className="block group hover:opacity-80 transition-opacity duration-200 hover:underline p-4 rounded-md bg-blue-500/5 outline outline-1 outline-blue-500/20"
           >
             <div className="flex flex-col">
               <div className="w-full flex justify-between items-baseline">
@@ -30,7 +30,7 @@ export default function Projects() {
                   {project.month} {project.year}
                 </span>
               </div>
-              <p className="prose prose-neutral dark:prose-invert pt-3">
+              <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
                 {project.description}
               </p>
             </div>
