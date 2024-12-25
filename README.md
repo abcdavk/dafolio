@@ -1,62 +1,21 @@
-# Nextfolio
+# Welcome to my portfolio!
 
-A clean, fast, and lightweight portfolio template built with [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/), and [Tailwind CSS](https://tailwindcss.com/) for optimal performance.
+Hello, and welcome to my corner of the web!
 
-Deploy your Nextfolio site with Vercel in minutes.
+My name is Dave, and I’m a passionate developer with a strong focus on Javascript, Typescript and C#. Over the years, I have honed my expertise in web development, game development, game modding, and design.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio)
+This portfolio is a glimpse into my journey—a showcase of projects, experiences, and achievements that reflect my dedication and love for what I do. Whether you’re here to explore my work, collaborate, or simply get to know me better, I’m glad you stopped by.
 
-## Technologies Used
+Feel free to explore my featured projects, learn more about my professional background, or reach out if you’re interested in working together. I’m always excited to connect with like-minded individuals and take on new challenges.
 
-- Framework: [Next.js](https://nextjs.org/)
-- Typography: [Vercel Geist Font](https://vercel.com/font)
-- Styling: [Tailwind CSS](https://tailwindcss.com/)
-- Analytics: [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights)
-- Deployment: [Vercel](https://vercel.com/)
+Thank you for visiting. Let’s build something amazing together!
 
-## Features
+---
 
-- **[MDX](https://mdxjs.com/) Support**: Use Markdown with JSX components for blog posts.
-- **Light and Dark Mode Toggle**: Switch between themes for better readability.
-- **Dynamic [OG Images](https://vercel.com/docs/functions/og-image-generation)**: Auto-generate Open Graph images for sharing.
-- **SEO Optimization**: Enhance search visibility with sitemap, robots.txt, and JSON-LD schema.
-- **Dynamic Feed Generation**: Automatic dynamic [RSS](https://nextfolio-template.vercel.app/rss.xml), [Atom](https://nextfolio-template.vercel.app/atom.xml), and [JSON](https://nextfolio-template.vercel.app/feed.json) feeds.
-- **[KaTeX](https://katex.org/) Integration**: Render mathematical expressions smoothly.
-- **Performance Tracking**: Monitor web performance with [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights).
-- **Interactive Embeds**: Easily embed interactive tweets and YouTube videos.
-- **Captions**: Add descriptive captions to photos, tweets, and videos.
-- **Image Grid**: Easily showcase image galleries or photos.
+**Freelance Services at Your Fingertips**
 
-## Installation
+As an active freelancer on Fiverr, I bring a diverse range of skills to help turn your ideas into reality. Whether it’s developing modern websites, crafting functional Telegram bots, designing captivating visuals, or diving into the exciting world of game modding, I’m here to deliver solutions tailored to your needs.
 
-Nextfolio uses [pnpm](https://pnpm.io/installation) for dependency management, so ensure it is installed on your system.
+Each project I take on is approached with passion, attention to detail, and a commitment to excellence. My goal is not just to complete tasks but to create work that truly resonates with your vision.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```
-pnpm create next-app --example https://github.com/1msirius/Nextfolio my-portfolio
-```
-
-Start the development server:
-
-```
-pnpm dev
-```
-
-The server will be running at [http://localhost:3000](http://localhost:3000).
-
-## Configuration
-
-1. Update the site metadata and social links in `app/config.ts` to set up SEO, feeds, social links, and Open Graph settings.
-2. Update your routes in `app/sitemap.ts` for SEO optimization.
-3. Update your blog posts in the `/content` folder.
-
-For more information about configuration, follow the instructions in the [Getting Started](https://nextfolio-template.vercel.app/blog/getting-started#configuration) post.
-
-## Contributing
-
-Contributions are welcome! To get involved, just push your code to the repo. Whether you're enhancing existing features or adding new ones, your efforts are greatly appreciated!
-
-## Licence
-
-Nextfolio is open-source and released under the MIT License.
+Let’s collaborate and bring your projects to life. Explore my portfolio or connect with me to discuss your ideas—I’m always open to new challenges!
