@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "MyQuestAPI v2",
+    status: "Deprecated",
+    year: 2024,
+    month: "Apr",
+    description:
+      "Replacing the old configuration system with a new in-game configuration and new data storage system",
+    url: "https://github.com/abcdavk/mQapi/releases/tag/v2.0.0",
+  },
+  {
     title: "MyShopLoader",
     status: "Deprecated",
     year: 2023,
@@ -18,30 +27,21 @@ export const projects: Project[] = [
     url: "https://github.com/abcdavk/mQapi/releases/tag/v2.0.0",
   },
   {
-    title: "Sky World Gen",
+    title: "Procedural Sky World Generation",
     status: "Deprecated",
     year: 2023,
     month: "Nov",
     description:
-      "Beautiful sky world generation 🌲.",
+      "Beautiful sky world generation.",
     url: "https://github.com/abcdavk/skies-worldgen",
   },
   {
-    title: "MyShopAPI Legacy",
+    title: "MyQuestAPI Legacy",
     status: "Deprecated",
     year: 2023,
     month: "Jun",
     description:
       "Make quests easily without having to type a lot of code with Open Source Quests.",
-    url: "https://github.com/abcdavk/mQapi",
-  },
-  {
-    title: "MyShopAPI Legacy",
-    status: "Deprecated",
-    year: 2023,
-    month: "Jun",
-    description:
-      "Make quests easily without having to type a lot of code with Open Source Quests.",
-    url: "https://github.com/abcdavk/myShopAPI",
+    url: "https://github.com/abcdavk/mQapi/tree/master",
   }
 ];
