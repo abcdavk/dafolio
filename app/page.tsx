@@ -91,7 +91,7 @@ export default function Page() {
       <hr className="border-t-2 border-slate-500/50 w-full my-4" />
 
       <div>
-        <h1 className="mb-8 text-2xl font-medium tracking-tight">Read Latest Our Blog</h1>
+        <h1 className="mb-8 text-2xl font-medium tracking-tight">Read Our Latest Blog</h1>
         <div>
           {latestBlog.map((post) => (
             <Link
