@@ -12,8 +12,14 @@ export default function Page() {
 
   // Sort blogs by date (newest first)
   const latestBlog = allBlogs
-    .sort((a, b) => new Date(b.metadata.publishedAt) - new Date(a.metadata.publishedAt))
-    .slice(0, 1);
+  .filter((blog) => blog.metadata.publishedAt) 
+  .sort((a, b) => {
+    const dateA = new Date(a.metadata.publishedAt).getTime();
+    const dateB = new Date(b.metadata.publishedAt).getTime();
+
+    return dateB - dateA;
+  })
+  .slice(0, 1);
   return (
     <section>
       
