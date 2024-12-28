@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Simple Object Detection with Tensorflow",
+    status: "Indev",
+    year: 2024,
+    month: "Dec",
+    description:
+    "Integrates a webcam to capture video input and overlays detected objects onto the live feed using TensorFlow's object detection model. It displays the detected objects' bounding boxes and labels on a canvas overlaying the video stream.",
+    url: "https://simple-object-detection.vercel.app/"
+  },
+  {
     title: "MyQuestAPI v2",
     status: "Deprecated",
     year: 2024,
