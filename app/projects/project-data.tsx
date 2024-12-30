@@ -9,6 +9,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Nothread",
+    status: "Stable",
+    year: 2024,
+    month: "Dec",
+    description:
+    "Nothread is Not a Threads. Send text messages to everyone anonymously. Users can create text posts visible on the Explore tab of the website, fostering a platform for open and anonymous expression.",
+    url: "https://nothread.vercel.app/"
+  },
+  {
     title: "Simple Object Detection with Tensorflow",
     status: "Indev",
     year: 2024,

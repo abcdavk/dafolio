@@ -63,7 +63,7 @@ export default function Page() {
           Thank you for visiting. Let’s build something amazing together!
         </p>
 
-        <hr className="border-t-2 border-slate-500/50 w-full my-4" />
+        {/* <hr className="border-t-2 border-slate-500/50 w-full my-4" />
 
         <b>Freelance Services at Your Fingertips</b>
 
@@ -84,7 +84,7 @@ export default function Page() {
             className="w-full h-full rounded-lg"
             title="My Fiverr Preview"
           ></iframe>
-        </div>
+        </div> */}
         
       </div>
 
