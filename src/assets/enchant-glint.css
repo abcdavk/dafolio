@@ -1,0 +1,137 @@
+.enchant-glint.active,
+.enchant-glint.enchant-glint-always {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.3s;
+  isolation: isolate;
+}
+
+.enchant-glint.active > *,
+.enchant-glint.enchant-glint-always > * {
+  position: relative;
+  z-index: 1;
+}
+
+.enchant-glint.active,
+.enchant-glint.active:hover {
+  border-color: transparent;
+}
+
+.enchant-glint.active::before,
+.enchant-glint.enchant-glint-always::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  z-index: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.05) 42%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+.enchant-glint.active.uncommon::before,
+.enchant-glint.enchant-glint-always.uncommon::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(48, 48, 48, 0.05) 42%,
+    rgba(251, 255, 20, 0.35) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+.enchant-glint.active.rare::before,
+.enchant-glint.enchant-glint-always.rare::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(48, 48, 48, 0.05) 42%,
+    rgba(20, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+.enchant-glint.active.epic::before,
+.enchant-glint.enchant-glint-always.epic::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(48, 48, 48, 0.05) 42%,
+    rgba(188, 20, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+.enchant-glint.active.legend::before,
+.enchant-glint.enchant-glint-always.legend::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(48, 48, 48, 0.05) 42%,
+    rgba(255, 20, 20, 0.35) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes enchant-glint {
+  from {
+    transform: translateX(-120%) rotate(20deg);
+  }
+
+  to {
+    transform: translateX(120%) rotate(20deg);
+  }
+}

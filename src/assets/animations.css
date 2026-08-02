@@ -1,0 +1,26 @@
+@keyframes rgb-gradient {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 800% 50%;
+  }
+}
+
+@keyframes text-pulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 12px rgba(26, 255, 148, 0.15),
+      0 0 24px rgba(26, 255, 148, 0.25),
+      0 0 48px rgba(26, 255, 148, 0.15);
+  }
+
+  50% {
+    text-shadow:
+      0 0 20px rgba(26, 255, 148, 0.35),
+      0 0 40px rgba(26, 255, 148, 0.6),
+      0 0 80px rgba(26, 255, 148, 0.4);
+  }
+}

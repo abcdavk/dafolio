@@ -1,0 +1,6 @@
+:root {
+  --text-color: #fafafa;
+  background-color: #101010;
+
+  color: var(--text-color);
+}
