@@ -38,6 +38,7 @@ const currentYear = new Date().getFullYear()
 <style scoped>
 .site-footer {
   width: 100%;
+  height: 0 auto;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 2rem 1rem 1.25rem;
