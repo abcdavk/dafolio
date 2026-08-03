@@ -138,7 +138,6 @@ const { isMobile } = useIsMobile()
   background-color: #f8f8f6;
   /* border-top: 1px solid rgba(0, 0, 0, 0.12); */
   padding: 2rem 1rem 1.25rem;
-  margin-top: 80px;
   color: #000;
 }
 

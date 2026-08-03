@@ -1,24 +1,26 @@
 <template>
-  <div class="cta-section-container center diagonal-frame" id="fiverr-cta">
-    <div class="fiverr-cta cta-section">
-      <h2>Let's Build Something Amazing</h2>
+  <div class="diagonal-frame">
+    <div class="cta-section-container center" id="fiverr-cta">
+      <div class="fiverr-cta cta-section">
+        <h2>Let's Build Something Amazing</h2>
 
-      <p>
-        Looking for a developer who enjoys solving problems, building web applications, or creating
-        custom Minecraft Bedrock addons? I'd love to help bring your ideas to life.
-      </p>
+        <p>
+          Looking for a developer who enjoys solving problems, building web applications, or
+          creating custom Minecraft Bedrock addons? I'd love to help bring your ideas to life.
+        </p>
 
-      <div class="cta-actions">
-        <a
-          class="cta-button primary enchant-glint enchant-glint-always strong"
-          href="https://www.fiverr.com/dave_64"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hire Me on Fiverr
-        </a>
+        <div class="cta-actions">
+          <a
+            class="cta-button primary enchant-glint enchant-glint-always strong"
+            href="https://www.fiverr.com/dave_64"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hire Me on Fiverr
+          </a>
 
-        <a class="cta-button secondary" href="mailto:abcdavk@proton.me"> Contact Me </a>
+          <a class="cta-button secondary" href="mailto:abcdavk@proton.me"> Contact Me </a>
+        </div>
       </div>
     </div>
   </div>
@@ -117,5 +119,14 @@
 
 .cta-button.secondary:hover {
   background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 768px) {
+  .diagonal-frame {
+    padding: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 24px;
+  }
 }
 </style>

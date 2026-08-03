@@ -24,7 +24,6 @@
 
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import { VueLenis, useLenis } from 'lenis/vue'
 import ReviewCard from '../ReviewCard.vue'
 
 const reviews = [
@@ -153,7 +152,7 @@ function handleMouseLeave() {
 }
 
 function startDragging(event) {
-  if (window.innerWidth <= 768 || event.button !== 0) return
+  if (event.button !== 0) return
 
   dragState.value.active = true
   dragState.value.startX = event.pageX
