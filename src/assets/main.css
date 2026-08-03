@@ -68,3 +68,15 @@ main {
 
   padding: 0;
 }
+
+.receipt-edge-top {
+  mask-image: conic-gradient(from 135deg at top, #0000, #101010 1deg 89deg, #0000 90deg);
+  mask-size: 16px 100%;
+  mask-repeat: round;
+  mask-position: top;
+
+  -webkit-mask-image: conic-gradient(from 135deg at top, #0000, #101010 1deg 89deg, #0000 90deg);
+  -webkit-mask-size: 16px 100%;
+  -webkit-mask-repeat: round;
+  -webkit-mask-position: top;
+}

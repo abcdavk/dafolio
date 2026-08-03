@@ -44,7 +44,8 @@ defineProps({
   flex-direction: column;
   gap: 1rem;
 
-  flex: 0 0 360px;
+  flex: 0 0 300px;
+  min-height: 360px;
   max-height: 380px;
 
   padding: 1.5rem;
@@ -54,7 +55,7 @@ defineProps({
 
   background: rgba(255, 255, 255, 0.05);
 
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+  border: dotted 2px rgba(255, 255, 255, 0.35);
 
   transition:
     transform 0.2s ease,
@@ -64,7 +65,7 @@ defineProps({
 
 .review-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 0 0 1px #d6d6d6;
+  border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
 .review-card__header {
@@ -84,6 +85,7 @@ defineProps({
 
 .review-card__username {
   margin: 0;
+  text-align: left;
   font-size: 1.4rem;
 }
 
@@ -116,6 +118,7 @@ defineProps({
 
   color: var(--text-color);
   line-height: 1.7;
+  font-size: 1rem;
 
   overflow-y: auto;
   overflow-x: hidden;

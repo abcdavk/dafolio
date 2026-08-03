@@ -207,7 +207,7 @@ onBeforeUnmount(() => {
 
 .review-card-track {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   width: max-content;
 }
 

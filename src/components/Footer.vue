@@ -1,7 +1,12 @@
 <template>
-  <footer class="site-footer">
+  <footer class="site-footer receipt-edge-top">
     <div class="footer-container">
-      <div class="footer-grid">
+      <div class="title">
+        <span class="dots"></span>
+        <span class="text">< FOOTER ></span>
+        <span class="dots"></span>
+      </div>
+      <div class="footer-grid footer-top">
         <div class="footer-headline">
           <span>> LANGUAGES & FRAMEWORKS</span>
           <h4>Frequently use or at least have studied.</h4>
@@ -131,7 +136,7 @@ const { isMobile } = useIsMobile()
   width: 100%;
   height: 0 auto;
   background-color: #f8f8f6;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  /* border-top: 1px solid rgba(0, 0, 0, 0.12); */
   padding: 2rem 1rem 1.25rem;
   margin-top: 80px;
   color: #000;
@@ -140,6 +145,16 @@ const { isMobile } = useIsMobile()
 .footer-container {
   width: min(100%, 1100px);
   margin: 0 auto;
+}
+
+.footer-container .title {
+  display: flex;
+  color: rgba(0, 0, 0, 0.2);
+  font-family: var(--font-mono);
+}
+
+.footer-container .title .text {
+  line-height: 50%;
 }
 
 .footer-grid {
@@ -154,6 +169,10 @@ const { isMobile } = useIsMobile()
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
+}
+
+.footer-top {
+  padding-top: 32px;
 }
 
 .footer-headline h4 {
@@ -189,6 +208,7 @@ const { isMobile } = useIsMobile()
 .footer-techstack li:hover {
   display: flex;
   filter: saturate(100%) hue-rotate(1deg) brightness(100%) contrast(100%);
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .footer-techstack .icon {
@@ -235,7 +255,7 @@ const { isMobile } = useIsMobile()
 .footer-links a:hover,
 .footer-social a:hover,
 .footer-mail:hover {
-  color: #13b86b;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .footer-bottom {
@@ -243,7 +263,7 @@ const { isMobile } = useIsMobile()
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px dotted rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
