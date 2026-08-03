@@ -1,5 +1,8 @@
 :root {
   --text-color: #fafafa;
+  --font-bold: 'Jersey 10', sans-serif;
+  --font-regular: 'Pixelify Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
   background-color: #101010;
 
   color: var(--text-color);

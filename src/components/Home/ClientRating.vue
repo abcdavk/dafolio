@@ -19,7 +19,7 @@
 }
 
 .rating__number {
-  font-family: 'Jersey 10', sans-serif;
+  font-family: var(--font-bold);
   font-size: clamp(4rem, 10vw, 7rem);
   line-height: 1;
   color: #1aff94;

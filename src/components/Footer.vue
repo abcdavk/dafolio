@@ -159,7 +159,7 @@ const { isMobile } = useIsMobile()
 .footer-headline h4 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Jersey 10', sans-serif;
+  font-family: var(--font-bold);
   font-size: 1.5em;
   letter-spacing: 0.02em;
   text-align: left;
@@ -198,7 +198,7 @@ const { isMobile } = useIsMobile()
 .footer-links h4,
 .footer-social h4 {
   margin: 0 0 0.75rem;
-  font-family: 'Jersey 10', sans-serif;
+  font-family: var(--font-bold);
   font-size: 1.35rem;
   letter-spacing: 0.04em;
   text-align: left;

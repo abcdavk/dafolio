@@ -148,7 +148,7 @@ defineProps({
 
   margin-top: auto;
 
-  font-family: 'Jersey 10', sans-serif;
+  font-family: var(--font-bold);
   font-size: 1.4rem;
   color: var(--text-color);
 
