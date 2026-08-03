@@ -50,13 +50,7 @@ defineProps({
 
   padding: 1.5rem;
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  background: rgba(255, 255, 255, 0.05);
-
-  border: dotted 2px rgba(255, 255, 255, 0.35);
-
+  background: rgba(255, 255, 255, 0.1);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,

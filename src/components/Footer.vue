@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="title">
         <span class="dots"></span>
-        <span class="text">< FOOTER ></span>
+        <span class="text">abcdave/k/c</span>
         <span class="dots"></span>
       </div>
       <div class="footer-grid footer-top">
@@ -151,10 +151,11 @@ const { isMobile } = useIsMobile()
   display: flex;
   color: rgba(0, 0, 0, 0.2);
   font-family: var(--font-mono);
+  font-size: 0.95rem;
 }
 
 .footer-container .title .text {
-  line-height: 50%;
+  line-height: 75%;
 }
 
 .footer-grid {

@@ -191,6 +191,9 @@ nav .shop-icon:hover {
 
 /* Mobile: hamburger menu */
 @media (max-width: 768px) {
+  nav .logo {
+    margin-left: 24px;
+  }
   nav {
     padding: 0.85rem 1rem;
   }

@@ -80,3 +80,16 @@ main {
   -webkit-mask-repeat: round;
   -webkit-mask-position: top;
 }
+
+.receipt-edge-bottom {
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/60px 100%;
+  mask-size: 16px 100%;
+  mask-repeat: round;
+  mask-position: bottom;
+
+  -webkit-mask-image: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+    50%/60px 100%;
+  -webkit-mask-size: 16px 100%;
+  -webkit-mask-repeat: round;
+  -webkit-mask-position: bottom;
+}

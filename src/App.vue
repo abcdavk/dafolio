@@ -17,13 +17,7 @@ header {
 }
 
 .app-main {
-  padding-top: 5.5rem;
-}
-
-@media (max-width: 768px) {
-  .app-main {
-    padding-top: 4.5rem;
-  }
+  padding-top: 7rem;
 }
 
 @media (min-width: 1024px) {
@@ -31,10 +25,6 @@ header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
   }
 
   header .wrapper {
