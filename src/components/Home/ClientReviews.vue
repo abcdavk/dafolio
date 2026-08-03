@@ -1,15 +1,7 @@
 <template>
   <div class="review">
     <div class="review-card-wrapper">
-      <div
-        ref="container"
-        class="review-card-container"
-        @pointerdown="startDragging"
-        @pointermove="dragging"
-        @pointerup="stopDragging"
-        @pointercancel="stopDragging"
-        @pointerleave="stopDragging"
-      >
+      <div ref="container" class="review-card-container">
         <div ref="track" class="review-card-track">
           <ReviewCard
             v-for="(review, index) in duplicatedReviews"
@@ -133,49 +125,13 @@ const track = ref(null)
 const paused = ref(false)
 const halfWidth = ref(0)
 const animationFrameId = ref(null)
-const speed = 0.5
-const dragState = ref({ active: false, startX: 0, startScrollLeft: 0 })
+const speed = 1
 
 const duplicatedReviews = computed(() => [...reviews, ...reviews])
 
 function updateWidth() {
   if (!track.value) return
   halfWidth.value = track.value.scrollWidth / 2
-}
-
-function handleMouseEnter() {
-  paused.value = true
-}
-
-function handleMouseLeave() {
-  paused.value = false
-}
-
-function startDragging(event) {
-  if (event.button !== 0) return
-
-  dragState.value.active = true
-  dragState.value.startX = event.pageX
-  dragState.value.startScrollLeft = container.value?.scrollLeft ?? 0
-  paused.value = true
-
-  event.currentTarget?.setPointerCapture?.(event.pointerId)
-}
-
-function dragging(event) {
-  if (!dragState.value.active || !container.value) return
-
-  const deltaX = event.pageX - dragState.value.startX
-  container.value.scrollLeft = dragState.value.startScrollLeft - deltaX
-}
-
-function stopDragging(event) {
-  if (!dragState.value.active) return
-
-  dragState.value.active = false
-  paused.value = false
-
-  event.currentTarget?.releasePointerCapture?.(event.pointerId)
 }
 
 function animate() {
@@ -190,13 +146,21 @@ function animate() {
   animationFrameId.value = window.requestAnimationFrame(animate)
 }
 
+window.addEventListener('scroll', () => {
+  if (container.value) {
+    container.value.scrollLeft += speed * 4
+
+    if (container.value.scrollLeft >= halfWidth.value) {
+      container.value.scrollLeft -= halfWidth.value
+    }
+  }
+})
+
 onMounted(async () => {
   await nextTick()
   updateWidth()
 
   window.addEventListener('resize', updateWidth)
-  track.value?.addEventListener('mouseenter', handleMouseEnter)
-  track.value?.addEventListener('mouseleave', handleMouseLeave)
 
   animate()
 })
@@ -207,8 +171,6 @@ onBeforeUnmount(() => {
   }
 
   window.removeEventListener('resize', updateWidth)
-  track.value?.removeEventListener('mouseenter', handleMouseEnter)
-  track.value?.removeEventListener('mouseleave', handleMouseLeave)
 })
 </script>
 
@@ -231,26 +193,14 @@ onBeforeUnmount(() => {
   margin-top: 48px;
   padding-bottom: 48px;
 
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   position: relative;
-  cursor: grab;
-  user-select: none;
-  touch-action: none;
 
   scrollbar-width: none;
-  scroll-snap-type: x mandatory;
+
   z-index: 10;
 
   transform: translateX(-8%) rotate(8deg);
-}
-
-.review-card-container:active {
-  cursor: grabbing;
-}
-
-.review-card-container::-webkit-scrollbar {
-  display: none;
 }
 
 .review-card-track {
