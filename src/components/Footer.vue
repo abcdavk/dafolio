@@ -167,13 +167,13 @@ const { isMobile } = useIsMobile()
 
 .footer-headline span {
   font-size: 0.8rem;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   color: #2f2f2f;
 }
 
 .footer-techstack {
   font-size: 0.95rem;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .footer-techstack ul {
@@ -207,7 +207,7 @@ const { isMobile } = useIsMobile()
 .footer-links a,
 .footer-social a,
 .footer-bottom {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.95rem;
   color: #000;
   display: flex;
@@ -217,7 +217,7 @@ const { isMobile } = useIsMobile()
 .footer-mail {
   text-decoration: none;
   font-weight: 700;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 .footer-links,
