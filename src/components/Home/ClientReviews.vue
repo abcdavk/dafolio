@@ -1,7 +1,15 @@
 <template>
   <div class="review">
     <div class="review-card-wrapper">
-      <div ref="container" class="review-card-container">
+      <div
+        ref="container"
+        class="review-card-container"
+        @pointerdown="startDragging"
+        @pointermove="dragging"
+        @pointerup="stopDragging"
+        @pointercancel="stopDragging"
+        @pointerleave="stopDragging"
+      >
         <div ref="track" class="review-card-track">
           <ReviewCard
             v-for="(review, index) in duplicatedReviews"
@@ -16,6 +24,7 @@
 
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { VueLenis, useLenis } from 'lenis/vue'
 import ReviewCard from '../ReviewCard.vue'
 
 const reviews = [
@@ -126,6 +135,7 @@ const paused = ref(false)
 const halfWidth = ref(0)
 const animationFrameId = ref(null)
 const speed = 0.5
+const dragState = ref({ active: false, startX: 0, startScrollLeft: 0 })
 
 const duplicatedReviews = computed(() => [...reviews, ...reviews])
 
@@ -140,6 +150,33 @@ function handleMouseEnter() {
 
 function handleMouseLeave() {
   paused.value = false
+}
+
+function startDragging(event) {
+  if (window.innerWidth <= 768 || event.button !== 0) return
+
+  dragState.value.active = true
+  dragState.value.startX = event.pageX
+  dragState.value.startScrollLeft = container.value?.scrollLeft ?? 0
+  paused.value = true
+
+  event.currentTarget?.setPointerCapture?.(event.pointerId)
+}
+
+function dragging(event) {
+  if (!dragState.value.active || !container.value) return
+
+  const deltaX = event.pageX - dragState.value.startX
+  container.value.scrollLeft = dragState.value.startScrollLeft - deltaX
+}
+
+function stopDragging(event) {
+  if (!dragState.value.active) return
+
+  dragState.value.active = false
+  paused.value = false
+
+  event.currentTarget?.releasePointerCapture?.(event.pointerId)
 }
 
 function animate() {
@@ -195,14 +232,26 @@ onBeforeUnmount(() => {
   margin-top: 48px;
   padding-bottom: 48px;
 
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
 
   scrollbar-width: none;
-
+  scroll-snap-type: x mandatory;
   z-index: 10;
 
   transform: translateX(-8%) rotate(8deg);
+}
+
+.review-card-container:active {
+  cursor: grabbing;
+}
+
+.review-card-container::-webkit-scrollbar {
+  display: none;
 }
 
 .review-card-track {

@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import { VueLenis, useLenis } from 'lenis/vue'
+import { watch } from 'vue'
+
+const lenisOptions = {}
+
+const lenis = useLenis()
+
+watch(lenis, (lenis) => {})
 </script>
 
 <template>
+  <VueLenis root :options="lenisOptions" />
   <Navbar />
   <main class="app-main">
     <RouterView />
