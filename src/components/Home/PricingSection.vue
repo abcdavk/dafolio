@@ -99,10 +99,6 @@
   color: var(--text-color);
 }
 
-/* ===========================
-   GRID
-=========================== */
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -110,21 +106,14 @@
   align-items: stretch;
 }
 
-/* ===========================
-   CARD
-=========================== */
-
 .pricing-card {
   display: flex;
   flex-direction: column;
 
   padding: 1.75rem;
-  border-radius: 18px;
 
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
-  backdrop-filter: blur(10px);
 
   cursor: pointer;
 }
@@ -137,18 +126,10 @@
   transform: translateY(-8px);
 }
 
-/* ===========================
-   HEADER
-=========================== */
-
 .pricing-card__header h3 {
   margin: 0;
   font-size: 1.7rem;
 }
-
-/* ===========================
-   BODY
-=========================== */
 
 .pricing-card__body {
   display: flex;
@@ -201,10 +182,6 @@
   flex-shrink: 0;
 }
 
-/* ===========================
-   COLORS
-=========================== */
-
 .uncommon .pricing-card__price,
 .uncommon .star,
 .uncommon .check {
@@ -222,10 +199,6 @@
 .legend .check {
   color: #ff2121;
 }
-
-/* ===========================
-   MOBILE
-=========================== */
 
 @media (max-width: 900px) {
   .pricing-grid {

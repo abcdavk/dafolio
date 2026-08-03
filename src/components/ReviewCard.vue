@@ -55,7 +55,6 @@ defineProps({
   background: rgba(255, 255, 255, 0.05);
 
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
-  border-radius: 16px;
 
   transition:
     transform 0.2s ease,

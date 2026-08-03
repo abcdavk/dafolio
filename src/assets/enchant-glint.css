@@ -42,6 +42,28 @@
   pointer-events: none;
 }
 
+.enchant-glint.active.strong::before,
+.enchant-glint.enchant-glint-always.strong::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  z-index: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.05) 42%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.05) 58%,
+    transparent 65%
+  );
+
+  transform: translateX(-100%) rotate(20deg);
+  animation: enchant-glint 2.5s linear infinite;
+
+  pointer-events: none;
+}
+
 .enchant-glint.active.uncommon::before,
 .enchant-glint.enchant-glint-always.uncommon::before {
   content: '';

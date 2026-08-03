@@ -2,27 +2,110 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-grid">
-        <div class="footer-links">
-          <h4>Explore</h4>
-          <router-link to="/">Home</router-link>
-          <router-link to="/project">Projects</router-link>
-          <router-link to="/blog">Blog</router-link>
-          <router-link to="/art">Art</router-link>
+        <div class="footer-headline">
+          <span>> LANGUAGES & FRAMEWORKS</span>
+          <h4>Frequently use or at least have studied.</h4>
         </div>
-
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <a href="https://github.com/abcdavk/" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a
-            href="https://www.fiverr.com/sellers/dave_64/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Fiverr</a
-          >
-          <a href="mailto:abcdavk@proton.me">Email</a>
+        <div class="footer-content">
+          <div class="footer-techstack">
+            <ul>
+              <li>
+                JS/TS
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-js-official" class="icon" />
+              </li>
+              <li>
+                C/C++
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-cpp3" class="icon" />
+              </li>
+              <li>
+                C#
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-csharp2" class="icon" />
+              </li>
+              <li>
+                Go
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-go-lightblue" class="icon" />
+              </li>
+              <li v-if="isMobile">
+                Java
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-java" class="icon" />
+              </li>
+              <li v-if="isMobile">
+                Rust
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-rust" class="icon" />
+              </li>
+              <li v-if="isMobile">
+                React
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-reactjs" class="icon" />
+              </li>
+              <li v-if="isMobile">
+                Vue
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-vue" class="icon" />
+              </li>
+            </ul>
+          </div>
+          <div class="footer-techstack" v-if="!isMobile">
+            <ul>
+              <li>
+                Java
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-java" class="icon" />
+              </li>
+              <li>
+                Rust
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-rust" class="icon" />
+              </li>
+              <li>
+                React
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-reactjs" class="icon" />
+              </li>
+              <li>
+                Vue
+                <span class="dots"></span>
+                <v-icon name="vi-file-type-vue" class="icon" />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="footer-grid">
+        <div class="footer-headline">
+          <span>> NAVIGATION</span>
+          <h4>In case you need it.</h4>
+        </div>
+        <div class="footer-content">
+          <div class="footer-links">
+            <h4>Explore</h4>
+            <router-link to="/">Home <span class="dots"></span></router-link>
+            <router-link to="/project">Projects <span class="dots"></span></router-link>
+            <router-link to="/blog">Blog <span class="dots"></span></router-link>
+            <router-link to="/art">Art <span class="dots"></span></router-link>
+          </div>
 
+          <div class="footer-social">
+            <h4>Connect<span class="dots"></span></h4>
+            <a href="https://github.com/abcdavk/" target="_blank" rel="noopener noreferrer"
+              >GitHub<span class="dots"></span
+            ></a>
+            <a
+              href="https://www.fiverr.com/sellers/dave_64/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Fiverr<span class="dots"></span
+            ></a>
+            <a href="mailto:abcdavk@proton.me">Email<span class="dots"></span></a>
+          </div>
+        </div>
+      </div>
       <div class="footer-bottom">
         <span>© {{ currentYear }} abcdave</span>
         <span>Built with Vue.</span>
@@ -33,16 +116,25 @@
 
 <script setup lang="ts">
 const currentYear = new Date().getFullYear()
+
+import { useIsMobile } from '@/composables/useIsMobile'
+const { isMobile } = useIsMobile()
 </script>
 
 <style scoped>
+.dots {
+  flex: 1; /* Tells this span to grow and fill empty space */
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.12); /* Creates the dot leader */
+  margin: 5px 0; /* Adds a small gap around the text */
+}
 .site-footer {
   width: 100%;
   height: 0 auto;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #f8f8f6;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   padding: 2rem 1rem 1.25rem;
   margin-top: 80px;
+  color: #000;
 }
 
 .footer-container {
@@ -52,9 +144,55 @@ const currentYear = new Date().getFullYear()
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   margin-bottom: 1.5rem;
+}
+
+.footer-content {
+  grid-column: span 2 / span 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.footer-headline h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.footer-headline span {
+  font-size: 0.8rem;
+  font-family: 'Space Mono', monospace;
+  color: #2f2f2f;
+}
+
+.footer-techstack {
+  font-size: 0.95rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.footer-techstack ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-techstack li {
+  display: flex;
+  filter: saturate(0%) hue-rotate(1deg) brightness(70%) contrast(110%);
+}
+
+.footer-techstack li:hover {
+  display: flex;
+  filter: saturate(100%) hue-rotate(1deg) brightness(100%) contrast(100%);
+}
+
+.footer-techstack .icon {
+  margin: 2px 6px 0 0;
 }
 
 .footer-links h4,
@@ -63,6 +201,7 @@ const currentYear = new Date().getFullYear()
   font-family: 'Jersey 10', sans-serif;
   font-size: 1.35rem;
   letter-spacing: 0.04em;
+  text-align: left;
 }
 
 .footer-links a,
@@ -70,11 +209,12 @@ const currentYear = new Date().getFullYear()
 .footer-bottom {
   font-family: 'Space Mono', monospace;
   font-size: 0.95rem;
-  text-align: center;
+  color: #000;
+  display: flex;
+  /* text-align: center; */
 }
 
 .footer-mail {
-  color: #fff;
   text-decoration: none;
   font-weight: 700;
   font-family: 'Space Mono', monospace;
@@ -84,12 +224,10 @@ const currentYear = new Date().getFullYear()
 .footer-social {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .footer-links a,
 .footer-social a {
-  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -97,7 +235,7 @@ const currentYear = new Date().getFullYear()
 .footer-links a:hover,
 .footer-social a:hover,
 .footer-mail:hover {
-  color: #ffd166;
+  color: #13b86b;
 }
 
 .footer-bottom {
@@ -105,7 +243,23 @@ const currentYear = new Date().getFullYear()
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-content {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
 }
 </style>

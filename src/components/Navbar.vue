@@ -1,24 +1,13 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { useIsMobile } from '@/composables/useIsMobile'
 
 const route = useRoute()
 const isMenuOpen = ref(false)
-const isMobile = ref(null)
 const header = ref(null)
 
-const checkIfMobile = () => {
-  isMobile.value = window.matchMedia('(max-width: 769px)').matches
-}
-
-onMounted(() => {
-  checkIfMobile()
-  window.addEventListener('resize', checkIfMobile)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkIfMobile)
-})
+const { isMobile } = useIsMobile()
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
@@ -106,8 +95,9 @@ header {
   top: 0;
   z-index: 1100;
 
-  background: rgba(16, 16, 16, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(16, 16, 16, 0.6);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 header.opened {
   height: 100%;
@@ -129,7 +119,7 @@ nav {
 
 nav .logo {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
 
   background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #ff8000, #ff0000);
@@ -151,7 +141,6 @@ nav .shop-button {
   padding: 32px;
   background-color: rgba(255, 255, 255, 0.02);
   border: solid 1px rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
   color: var(--text-color);
   cursor: pointer;
 }
@@ -313,10 +302,6 @@ nav .shop-icon:hover {
 
 /* Smaller mobile screens */
 @media (max-width: 480px) {
-  nav .logo {
-    font-size: 2.5rem;
-  }
-
   nav .navigation {
     width: 100%;
     font-size: 1.75rem;

@@ -48,7 +48,7 @@
   margin-left: 1.5rem;
   margin-bottom: 1rem;
 
-  border-radius: 16px;
+  /* border-radius: 16px; */
 
   shape-margin: 1rem;
 }

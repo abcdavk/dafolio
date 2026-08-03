@@ -1,6 +1,6 @@
 <template>
-  <div class="cta-section-container padding center" id="fiverr-cta">
-    <div class="fiverr-cta cta-section enchant-glint enchant-glint-always">
+  <div class="cta-section-container center diagonal-frame" id="fiverr-cta">
+    <div class="fiverr-cta cta-section">
       <h2>Let's Build Something Amazing</h2>
 
       <p>
@@ -10,7 +10,7 @@
 
       <div class="cta-actions">
         <a
-          class="cta-button primary"
+          class="cta-button primary enchant-glint enchant-glint-always strong"
           href="https://www.fiverr.com/dave_64"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,6 +29,10 @@
   margin: 0 auto;
 }
 
+.diagonal-frame {
+  padding: 3rem;
+}
+
 .cta-section {
   padding: 3rem;
 
@@ -39,15 +43,13 @@
 
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: #202020;
 
   border: 1px solid rgba(229, 229, 229, 0.25);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
 
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-
-  backdrop-filter: blur(10px);
 }
 
 .cta-section h2 {
@@ -78,9 +80,11 @@
 
   padding: 0.85rem 1.5rem;
 
-  border-radius: 12px;
+  /* border-radius: 12px; */
 
   text-decoration: none;
+  font-family: 'Jersey 10', sans-serif;
+  font-size: large;
 
   transition:
     transform 0.2s ease,
