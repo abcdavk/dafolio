@@ -111,23 +111,12 @@ header {
 }
 
 #navbar {
-  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/60px 100%;
-  mask-size: 16px 100%;
-  mask-repeat: round;
-  mask-position: bottom;
-
-  -webkit-mask-image: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
-    50%/60px 100%;
-  -webkit-mask-size: 16px 100%;
-  -webkit-mask-repeat: round;
-  -webkit-mask-position: bottom;
   background: #101010;
   transition: background 1s;
 }
 
 #navbar.scrolled {
   background: rgba(16, 16, 16, 0.85);
-  mask: none;
 }
 
 header.opened {
