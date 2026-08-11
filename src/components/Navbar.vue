@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useIsMobile } from '@/composables/useIsMobile'
 
@@ -19,8 +19,24 @@ function closeMenu() {
   header.value.classList.remove('opened')
 }
 
+watch(
+  () => route.path,
+  () => {
+    if (route.path !== '/') {
+      header.value?.classList.add('unhide')
+      return
+    }
+    header.value?.classList.remove('unhide')
+  },
+)
+
 function handleScroll() {
-  header.value?.classList.toggle('scrolled', window.scrollY > 300)
+  if (route.path !== '/') {
+    header.value?.classList.add('unhide')
+    return
+  }
+
+  header.value?.classList.toggle('unhide', window.scrollY > 300)
 }
 
 onMounted(() => {
@@ -112,12 +128,10 @@ header {
 
 #navbar {
   top: -128px;
-  transition:
-    background 1s ease,
-    top 1s ease;
+  transition: top 1s ease;
 }
 
-#navbar.scrolled {
+#navbar.unhide {
   top: 0;
 }
 

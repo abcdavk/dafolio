@@ -1,3 +1,9 @@
+<script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+</script>
+
 <template>
   <div class="hero-section-container receipt-edge-bottom">
     <div class="hero-section" id="hero-section">
@@ -10,6 +16,26 @@
         with a strong focus on JavaScript, Go, and C/C++. Over the years, I have honed my expertise
         in web development, game development, game modding, and design. <br /><br />
       </p>
+
+      <div class="navigation">
+        <router-link to="/" :class="{ current: route.path === '/' }" @click="closeMenu">
+          Home
+        </router-link>
+
+        <router-link to="/blog" :class="{ current: route.path === '/blog' }" @click="closeMenu">
+          Blog
+        </router-link>
+
+        <router-link to="/project" :class="{ current: route.path === '/project' }">
+          Project
+        </router-link>
+
+        <router-link to="/art" :class="{ current: route.path === '/art' }" @click="closeMenu">
+          Art
+        </router-link>
+
+        <router-link to="/#fiverr-cta"> Buy </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +57,24 @@
 .hero-section p {
   text-align: justify;
   text-justify: inter-word;
+}
+
+.hero-section .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-section .navigation a {
+  text-decoration: none;
+  font-family: var(--font-bold);
+  color: #000;
+  font-size: xx-large;
+}
+
+.hero-section .navigation a:hover {
+  text-decoration: line-through;
 }
 
 .hero-image {
