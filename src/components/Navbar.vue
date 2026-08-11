@@ -20,7 +20,7 @@ function closeMenu() {
 }
 
 function handleScroll() {
-  header.value?.classList.toggle('scrolled', window.scrollY > 350)
+  header.value?.classList.toggle('scrolled', window.scrollY > 300)
 }
 
 onMounted(() => {
@@ -103,20 +103,22 @@ header {
   width: 100%;
   position: fixed;
   left: 0;
-  top: 0;
   z-index: 1100;
+  background: rgba(16, 16, 16, 0.85);
 
   backdrop-filter: blur(32px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #navbar {
-  background: #101010;
-  transition: background 1s;
+  top: -128px;
+  transition:
+    background 1s ease,
+    top 1s ease;
 }
 
 #navbar.scrolled {
-  background: rgba(16, 16, 16, 0.85);
+  top: 0;
 }
 
 header.opened {

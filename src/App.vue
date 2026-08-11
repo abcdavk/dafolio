@@ -26,7 +26,7 @@ header {
 }
 
 .app-main {
-  margin-top: 6rem;
+  /* margin-top: 6rem; */
 }
 
 @media (min-width: 1024px) {
