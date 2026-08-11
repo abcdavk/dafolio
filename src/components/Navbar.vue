@@ -20,7 +20,7 @@ function closeMenu() {
 }
 
 function handleScroll() {
-  header.value?.classList.toggle('scrolled', window.scrollY > 590)
+  header.value?.classList.toggle('scrolled', window.scrollY > 350)
 }
 
 onMounted(() => {

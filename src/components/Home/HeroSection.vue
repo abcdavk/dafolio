@@ -9,15 +9,6 @@
         My name is Dave, known as <span class="quote">abcdave</span>, and I'm a passionate developer
         with a strong focus on JavaScript, Go, and C/C++. Over the years, I have honed my expertise
         in web development, game development, game modding, and design. <br /><br />
-        This portfolio is a glimpse into my journey—a showcase of projects, experiences, and
-        achievements that reflect my dedication and love for what I do. Whether you're here to
-        explore my work, collaborate, or simply get to know me better, I'm glad you stopped by.
-        <br /><br />
-        Feel free to explore my featured projects, learn more about my professional background, or
-        reach out if you're interested in working together. I'm always excited to connect with
-        like-minded individuals and take on new challenges.
-        <br /><br />
-        Thank you for visiting. Let's build something amazing together!
       </p>
     </div>
   </div>
