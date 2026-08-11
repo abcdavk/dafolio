@@ -6,7 +6,7 @@ import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const main = ref(null)
+const main = ref<HTMLElement | null>(null)
 
 const lenisOptions = {}
 const lenis = useLenis()
