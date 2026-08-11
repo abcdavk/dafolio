@@ -18,10 +18,21 @@ function closeMenu() {
   isMenuOpen.value = false
   header.value.classList.remove('opened')
 }
+
+function handleScroll() {
+  header.value?.classList.toggle('scrolled', window.scrollY > 590)
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <header ref="header">
+  <header ref="header" id="navbar">
     <nav>
       <a href="/#" class="logo font-bold">Dafolio</a>
 
@@ -95,10 +106,30 @@ header {
   top: 0;
   z-index: 1100;
 
-  background: rgba(16, 16, 16, 0.6);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(32px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+#navbar {
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50%/60px 100%;
+  mask-size: 16px 100%;
+  mask-repeat: round;
+  mask-position: bottom;
+
+  -webkit-mask-image: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+    50%/60px 100%;
+  -webkit-mask-size: 16px 100%;
+  -webkit-mask-repeat: round;
+  -webkit-mask-position: bottom;
+  background: #101010;
+  transition: background 1s;
+}
+
+#navbar.scrolled {
+  background: rgba(16, 16, 16, 0.85);
+  mask: none;
+}
+
 header.opened {
   height: 100%;
 }

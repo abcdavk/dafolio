@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
 @import url('./base.css');
 @import url('./animations.css');
 @import url('./enchant-glint.css');
@@ -38,7 +40,7 @@ body {
   margin: 0;
 
   font-family: var(--font-regular);
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   font-optical-sizing: auto;
   font-size: clamp(16px, 1vw + 0.5rem, 20px);
 }
