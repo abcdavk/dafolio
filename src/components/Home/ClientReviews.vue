@@ -146,16 +146,6 @@ function animate() {
   animationFrameId.value = window.requestAnimationFrame(animate)
 }
 
-window.addEventListener('scroll', () => {
-  if (container.value) {
-    container.value.scrollLeft += speed * 4
-
-    if (container.value.scrollLeft >= halfWidth.value) {
-      container.value.scrollLeft -= halfWidth.value
-    }
-  }
-})
-
 onMounted(async () => {
   await nextTick()
   updateWidth()
