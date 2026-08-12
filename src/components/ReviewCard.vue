@@ -51,6 +51,8 @@ defineProps({
   min-height: 360px;
   max-height: 380px;
 
+  border-radius: 12px;
+
   background: rgba(255, 255, 255, 0.1);
   transition:
     transform 0.2s ease,
