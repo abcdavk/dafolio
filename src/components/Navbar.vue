@@ -127,12 +127,13 @@ header {
 }
 
 #navbar {
-  top: -128px;
-  transition: top 1s ease;
+  top: -100px;
+  transition: top 0.2s ease;
 }
 
 #navbar.unhide {
   top: 0;
+  transition: top 0.2s ease;
 }
 
 header.opened {
