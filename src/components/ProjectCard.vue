@@ -89,7 +89,8 @@ defineProps<{
   align-items: flex-start;
   width: 100%;
   max-width: 600px;
-  max-height: 185px;
+  max-height: 190px;
+  height: 190px;
 }
 
 .project-card__icon-wrapper {
