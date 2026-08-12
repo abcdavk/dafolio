@@ -4,7 +4,7 @@ import PopImage from './components/PopImage.vue'
 
 <template>
   <div class="center">
-    <h1>Art</h1>
+    <h1>Arts</h1>
   </div>
   <div class="art-container">
     <Vue3Marquee :duration="32" :pause-on-hover="true" class="art-track">
