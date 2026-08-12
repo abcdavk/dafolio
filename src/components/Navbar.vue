@@ -127,7 +127,7 @@ header {
 }
 
 #navbar {
-  top: -100px;
+  top: -125px;
   transition: top 0.2s ease;
 }
 
