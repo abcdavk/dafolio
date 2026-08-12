@@ -11,8 +11,8 @@
 
       <div class="navigation">
         <router-link to="/" class="current"> Home </router-link>
-        <router-link to="/project"> Project </router-link>
-        <router-link to="/art"> Art </router-link>
+        <router-link to="/project"> Projects </router-link>
+        <router-link to="/art"> Arts </router-link>
         <router-link to="/#fiverr-cta"> $Order$ </router-link>
       </div>
     </div>

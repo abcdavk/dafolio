@@ -5,7 +5,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <template>
   <div class="center">
-    <h1>Project</h1>
+    <h1>Projects</h1>
   </div>
   <div class="project-container">
     <div class="project">

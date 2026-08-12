@@ -78,11 +78,11 @@ onUnmounted(() => {
             :class="{ current: route.path === '/project' }"
             @click="closeMenu"
           >
-            Project
+            Projects
           </router-link>
 
           <router-link to="/art" :class="{ current: route.path === '/art' }" @click="closeMenu">
-            Art
+            Arts
           </router-link>
 
           <router-link to="/#fiverr-cta" @click="closeMenu">$Order$</router-link>
