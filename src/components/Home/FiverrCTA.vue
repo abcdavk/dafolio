@@ -48,7 +48,7 @@
   background: #202020;
 
   border: 1px solid rgba(229, 229, 229, 0.25);
-  /* border-radius: 20px; */
+  border-radius: 14px;
   overflow: hidden;
 
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
@@ -82,7 +82,7 @@
 
   padding: 0.85rem 1.5rem;
 
-  /* border-radius: 12px; */
+  border-radius: 8px;
 
   text-decoration: none;
   font-family: var(--font-bold);
