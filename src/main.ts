@@ -1,4 +1,5 @@
 import './assets/main.css'
+import 'vue-final-modal/style.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -22,6 +23,7 @@ import {
   ViFileTypeReactjs,
   ViFileTypeVue,
 } from 'oh-vue-icons/icons'
+import { createVfm } from 'vue-final-modal'
 
 addIcons(
   BiStarFill,
@@ -39,8 +41,11 @@ addIcons(
   ViFileTypeVue,
 )
 
+const vfm = createVfm()
+
 const app = createApp(App)
 app.component('v-icon', OhVueIcon)
+app.use(vfm)
 app.use(Vue3Marquee)
 app.use(router)
 app.mount('#app')

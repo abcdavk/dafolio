@@ -128,5 +128,9 @@
     padding-right: 24px;
     margin-bottom: 24px;
   }
+
+  .cta-button {
+    min-width: 100%;
+  }
 }
 </style>

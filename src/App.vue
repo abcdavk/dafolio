@@ -32,9 +32,6 @@ header {
   line-height: 1.5;
 }
 
-.app-main {
-}
-
 .app-padding {
   margin-top: 6rem;
 }

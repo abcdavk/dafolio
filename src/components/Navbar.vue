@@ -73,10 +73,6 @@ onUnmounted(() => {
             Home
           </router-link>
 
-          <router-link to="/blog" :class="{ current: route.path === '/blog' }" @click="closeMenu">
-            Blog
-          </router-link>
-
           <router-link
             to="/project"
             :class="{ current: route.path === '/project' }"

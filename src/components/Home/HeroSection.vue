@@ -10,8 +10,7 @@
       </p>
 
       <div class="navigation">
-        <router-link to="/"> Home </router-link>
-        <router-link to="/blog"> Blog </router-link>
+        <router-link to="/" class="current"> Home </router-link>
         <router-link to="/project"> Project </router-link>
         <router-link to="/art"> Art </router-link>
         <router-link to="/#fiverr-cta"> $Order$ </router-link>
@@ -53,7 +52,8 @@
   font-size: xx-large;
 }
 
-.hero-section .navigation a:hover {
+.hero-section .navigation a:hover,
+.hero-section .navigation .current {
   text-decoration: line-through;
 }
 
