@@ -137,5 +137,9 @@ defineProps<{
   .project-card {
     border-radius: 0;
   }
+  .project-card--icon {
+    height: 250px;
+    max-height: 250px;
+  }
 }
 </style>
