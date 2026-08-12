@@ -57,12 +57,14 @@ defineProps({
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
+    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .review-card:hover {
   transform: translateY(-12px);
   border: solid 2px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .review-card__header {

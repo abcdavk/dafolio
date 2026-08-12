@@ -8,12 +8,20 @@ import ProjectCard from '@/components/ProjectCard.vue'
     <h1>Project</h1>
   </div>
   <div class="project-container">
-    <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
+    <div class="project">
+      <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
+    </div>
   </div>
 </template>
 
 <style>
 .project-container {
-  /* width: 100%; */
+  min-height: 60vh;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
