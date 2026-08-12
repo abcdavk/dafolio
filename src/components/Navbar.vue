@@ -158,13 +158,13 @@ nav .logo {
   font-size: 3rem;
   font-weight: 400;
 
-  background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #ff8000, #ff0000);
+  /* background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #ff8000, #ff0000); */
 
-  background-size: 800% 100%;
-  color: transparent;
-  -webkit-background-clip: text;
+  /* background-size: 800% 100%; */
+  color: #fff;
+  /* -webkit-background-clip: text; */
 
-  animation: rgb-gradient 60s linear infinite;
+  /* animation: rgb-gradient 60s linear infinite; */
 }
 
 .navigation-container {
@@ -211,13 +211,13 @@ nav .shop-icon:hover {
 
   nav .navigation a:hover,
   nav .navigation .current {
-    background: linear-gradient(90deg, #00ff4c, #00ffdd, #6200ff, #00ffdd, #00ff4c);
+    /* background: linear-gradient(90deg, #00ff4c, #00ffdd, #6200ff, #00ffdd, #00ff4c); */
 
     background-size: 800% 100%;
-    color: transparent;
+    /* color: transparent; */
     -webkit-background-clip: text;
 
-    animation: rgb-gradient 60s linear infinite;
+    /* animation: rgb-gradient 60s linear infinite; */
   }
 
   nav .navigation .current {

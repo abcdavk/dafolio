@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import { VueLenis, useLenis } from 'lenis/vue'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const main = ref<HTMLElement | null>(null)
-
-const lenisOptions = {}
-const lenis = useLenis()
-watch(lenis, (lenis) => {})
 
 watch(
   () => route.path,
@@ -25,7 +20,6 @@ watch(
 </script>
 
 <template>
-  <VueLenis root :options="lenisOptions" />
   <Navbar />
   <main class="app-main" ref="main">
     <RouterView />

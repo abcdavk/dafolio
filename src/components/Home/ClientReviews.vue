@@ -1,22 +1,7 @@
-<template>
-  <div class="review">
-    <div class="review-card-wrapper">
-      <div ref="container" class="review-card-container">
-        <div ref="track" class="review-card-track">
-          <ReviewCard
-            v-for="(review, index) in duplicatedReviews"
-            :key="`${review.username}-${index}`"
-            v-bind="review"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import ReviewCard from '../ReviewCard.vue'
+
+import { Vue3Marquee } from 'vue3-marquee'
 
 const reviews = [
   {
@@ -119,50 +104,23 @@ const reviews = [
     duration: '4 weeks',
   },
 ]
-
-const container = ref(null)
-const track = ref(null)
-const paused = ref(false)
-const halfWidth = ref(0)
-const animationFrameId = ref(null)
-const speed = 1
-
-const duplicatedReviews = computed(() => [...reviews, ...reviews])
-
-function updateWidth() {
-  if (!track.value) return
-  halfWidth.value = track.value.scrollWidth / 2
-}
-
-function animate() {
-  if (!paused.value && container.value && track.value) {
-    container.value.scrollLeft += speed
-
-    if (container.value.scrollLeft >= halfWidth.value) {
-      container.value.scrollLeft -= halfWidth.value
-    }
-  }
-
-  animationFrameId.value = window.requestAnimationFrame(animate)
-}
-
-onMounted(async () => {
-  await nextTick()
-  updateWidth()
-
-  window.addEventListener('resize', updateWidth)
-
-  animate()
-})
-
-onBeforeUnmount(() => {
-  if (animationFrameId.value) {
-    window.cancelAnimationFrame(animationFrameId.value)
-  }
-
-  window.removeEventListener('resize', updateWidth)
-})
 </script>
+
+<template>
+  <div class="review">
+    <div class="review-card-wrapper">
+      <div ref="container" class="review-card-container">
+        <Vue3Marquee :duration="32" :pause-on-hover="true" class="reviews">
+          <ReviewCard
+            v-for="(review, index) in reviews"
+            :key="`${review.username}-${index}`"
+            v-bind="review"
+          />
+        </Vue3Marquee>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style>
 .review-card-wrapper {
@@ -193,24 +151,7 @@ onBeforeUnmount(() => {
   transform: translateX(-8%) rotate(8deg);
 }
 
-.review-card-track {
-  display: flex;
-  gap: 1rem;
-  width: max-content;
-}
-
-@media (max-width: 768px) {
-  .review-card-wrapper {
-    padding-block: 80px;
-    margin-block: -80px;
-  }
-
-  .review-card-wrapper::before {
-    background: linear-gradient(to right, var(--fade-color) 0%, rgba(255, 255, 255, 0) 50%);
-  }
-
-  .review-card-wrapper::after {
-    background: linear-gradient(to left, var(--fade-color) 0%, rgba(255, 255, 255, 0) 50%);
-  }
+.reviews {
+  padding-top: 28px;
 }
 </style>

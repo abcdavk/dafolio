@@ -37,6 +37,9 @@ defineProps({
 
 <style>
 .review-card {
+  padding: 1.5rem;
+  margin: 0.5rem;
+
   position: relative;
   overflow: hidden;
 
@@ -47,8 +50,6 @@ defineProps({
   flex: 0 0 300px;
   min-height: 360px;
   max-height: 380px;
-
-  padding: 1.5rem;
 
   background: rgba(255, 255, 255, 0.1);
   transition:

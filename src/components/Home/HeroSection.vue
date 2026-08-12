@@ -1,39 +1,19 @@
-<script setup>
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-</script>
-
 <template>
   <div class="hero-section-container receipt-edge-bottom">
     <div class="hero-section" id="hero-section">
       <h1>A lil bit about me</h1>
 
       <p>
-        <!-- <img src="/img/profile.png" alt="Dave" class="hero-image" /> -->
-
         My name is Dave, known as <span class="quote">abcdave</span>, and I'm a passionate developer
         with a strong focus on JavaScript, Go, and C/C++. Over the years, I have honed my expertise
         in web development, game development, game modding, and design. <br /><br />
       </p>
 
       <div class="navigation">
-        <router-link to="/" :class="{ current: route.path === '/' }" @click="closeMenu">
-          Home
-        </router-link>
-
-        <router-link to="/blog" :class="{ current: route.path === '/blog' }" @click="closeMenu">
-          Blog
-        </router-link>
-
-        <router-link to="/project" :class="{ current: route.path === '/project' }">
-          Project
-        </router-link>
-
-        <router-link to="/art" :class="{ current: route.path === '/art' }" @click="closeMenu">
-          Art
-        </router-link>
-
+        <router-link to="/"> Home </router-link>
+        <router-link to="/blog"> Blog </router-link>
+        <router-link to="/project"> Project </router-link>
+        <router-link to="/art"> Art </router-link>
         <router-link to="/#fiverr-cta"> Buy </router-link>
       </div>
     </div>
@@ -94,6 +74,22 @@ const route = useRoute()
 @media (max-width: 847px) {
   .hero-section {
     padding: 0.85rem 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-section .navigation {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .hero-section .navigation a {
+    flex: 0 1 25%;
   }
 }
 </style>
