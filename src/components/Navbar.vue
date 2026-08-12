@@ -1,13 +1,10 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useIsMobile } from '@/composables/useIsMobile'
 
 const route = useRoute()
 const isMenuOpen = ref(false)
 const header = ref(null)
-
-const { isMobile } = useIsMobile()
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
@@ -92,22 +89,8 @@ onUnmounted(() => {
             Art
           </router-link>
 
-          <router-link
-            to="/#fiverr-cta"
-            @click="closeMenu"
-            v-if="isMobile"
-            class="shop-button enchant-glint enchant-glint-always"
-          >
-            Buy
-          </router-link>
+          <router-link to="/#fiverr-cta" @click="closeMenu">$Order$</router-link>
         </div>
-        <router-link
-          to="/#fiverr-cta"
-          @click="closeMenu"
-          class="shop-button enchant-glint enchant-glint-always"
-          v-if="!isMobile"
-          ><v-icon name="px-shopping-bag" class="shop-icon" />
-        </router-link>
       </div>
     </nav>
     <div class="nav-overlay" :class="{ visible: isMenuOpen }" @click="closeMenu"></div>
@@ -172,23 +155,6 @@ nav .logo {
   display: flex;
   align-items: center;
   gap: 32px;
-}
-
-nav .shop-button {
-  padding: 32px;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: solid 1px rgba(255, 255, 255, 0.08);
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-nav .shop-icon {
-  scale: 150%;
-  transition: all 0.2s;
-}
-
-nav .shop-icon:hover {
-  scale: 200%;
 }
 
 /* Desktop */
