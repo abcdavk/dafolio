@@ -144,14 +144,11 @@ const reviews = [
   overflow: hidden;
   position: relative;
 
-  scrollbar-width: none;
-
-  z-index: 10;
-
   transform: translateX(-8%) rotate(8deg);
 }
 
 .reviews {
   padding-top: 28px;
+  overflow: hidden;
 }
 </style>
