@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ProjectBuilder } from '../projects/index'
+import ProjectCardContent from './ProjectCardContent.vue'
 
 defineProps<{
   project: ProjectBuilder
@@ -17,10 +18,7 @@ defineProps<{
         />
       </div>
 
-      <div class="project-card__content">
-        <h3 class="project-card__title">{{ project.title }}</h3>
-        <p class="project-card__description">{{ project.description }}</p>
-      </div>
+      <ProjectCardContent :project="project" />
     </div>
 
     <div v-else-if="project.iconSrc" class="project-card project-card--icon">
@@ -28,17 +26,11 @@ defineProps<{
         <img :src="project.iconSrc" :alt="`${project.title} icon`" class="project-card__icon-img" />
       </div>
 
-      <div class="project-card__content">
-        <h3 class="project-card__title">{{ project.title }}</h3>
-        <p class="project-card__description">{{ project.description }}</p>
-      </div>
+      <ProjectCardContent :project="project" />
     </div>
 
     <div v-else class="project-card project-card--minimal">
-      <div class="project-card__content">
-        <h3 class="project-card__title">{{ project.title }}</h3>
-        <p class="project-card__description">{{ project.description }}</p>
-      </div>
+      <ProjectCardContent :project="project" />
     </div>
   </div>
 </template>
@@ -46,6 +38,7 @@ defineProps<{
 <style>
 .project-card-container {
   padding: 12px;
+  max-width: 520px;
 }
 
 .project-card {
@@ -53,7 +46,6 @@ defineProps<{
   overflow: hidden;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   transition:
@@ -61,13 +53,6 @@ defineProps<{
     background-color 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .project-card--banner {
@@ -104,6 +89,7 @@ defineProps<{
   align-items: flex-start;
   width: 100%;
   max-width: 600px;
+  max-height: 185px;
 }
 
 .project-card__icon-wrapper {
@@ -142,40 +128,6 @@ defineProps<{
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
-
-.project-card__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.project-card__title {
-  margin: 0;
-  font-size: 1.5rem;
-  /* line-height: 1.3; */
-
-  text-align: left;
-
-  color: rgba(255, 255, 255, 0.95);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
-}
-
-.project-card__description {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 @media (max-width: 640px) {
