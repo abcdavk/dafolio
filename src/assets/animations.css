@@ -1,4 +1,5 @@
-@keyframes rgb-gradient {
+/* Cause lag */
+/* @keyframes rgb-gradient {
   from {
     background-position: 0% 50%;
   }
@@ -6,7 +7,7 @@
   to {
     background-position: 800% 50%;
   }
-}
+} */
 
 @keyframes text-pulse {
   0%,
