@@ -4,9 +4,9 @@ import StupdObjectDetection from './StupdObjectDetection'
 import TPMenuWithJsonUI from './TPMenuWithJsonUI'
 import WayBackHome from './WayBackHome'
 
-export const projects: ProjectBuilder[] = [
-  WayBackHome(),
-  ItemHologram(),
+export const projects: ProjectBuilder[] = [WayBackHome(), ItemHologram()]
+
+export const projectsMarquee: ProjectBuilder[] = [
   TPMenuWithJsonUI(),
   AuctionHouse(),
   StupdObjectDetection(),
