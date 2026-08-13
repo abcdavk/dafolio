@@ -1,8 +1,22 @@
+<script setup lang="ts">
+import { useCountUp } from '@/composables/useCountUp'
+import { ref } from 'vue'
+
+const numberElement = ref<HTMLElement | null>(null)
+
+const { value } = useCountUp(numberElement, {
+  from: 40,
+  to: 50,
+})
+</script>
+
 <template>
   <div class="client-info-container padding">
     <div class="client-info">
-      <span class="client-info__number">50+</span>
+      <span ref="numberElement" class="client-info__number"> {{ value }}+ </span>
+
       <h3 class="client-info__title">Clients Served</h3>
+
       <p class="client-info__description">
         Trusted by creators worldwide to build Minecraft Bedrock addons, web applications, and
         custom solutions.
@@ -11,7 +25,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .client-info-container {
   width: min(100%, 800px);
   margin: 0 auto;

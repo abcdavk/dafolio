@@ -52,7 +52,8 @@ defineProps<{
 .project-card__content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 .project-card__details {
