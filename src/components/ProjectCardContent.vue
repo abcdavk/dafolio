@@ -9,26 +9,46 @@ defineProps<{
 <template>
   <div class="project-card__content">
     <div class="project-card__details">
-      <h3 class="project-card__title">{{ project.title }}</h3>
-      <p class="project-card__description">{{ project.description }}</p>
+      <h3 class="project-card__title">
+        {{ project.title }}
+      </h3>
+
+      <p class="project-card__description">
+        {{ project.description }}
+      </p>
     </div>
+
     <div class="project-card__action">
-      <a v-if="project.primaryBtn" :href="project.primaryBtn?.href" target="_blank" class="primary">
-        {{ project.primaryBtn?.label }}
+      <a
+        v-if="project.primaryBtn"
+        :href="project.primaryBtn.disabled ? undefined : project.primaryBtn.href"
+        target="_blank"
+        :class="{
+          primary: !project.primaryBtn.disabled,
+          disabled: project.primaryBtn.disabled,
+        }"
+        @click="project.primaryBtn.disabled && $event.preventDefault()"
+      >
+        {{ project.primaryBtn.label ?? 'Visit' }}
       </a>
+
       <a
         v-if="project.secondaryBtn"
-        :href="project.secondaryBtn?.href"
+        :href="project.secondaryBtn.disabled ? undefined : project.secondaryBtn.href"
         target="_blank"
-        class="secondary"
+        :class="{
+          secondary: !project.secondaryBtn.disabled,
+          disabled: project.secondaryBtn.disabled,
+        }"
+        @click="project.secondaryBtn.disabled && $event.preventDefault()"
       >
-        {{ project.secondaryBtn?.label }}
+        {{ project.secondaryBtn.label }}
       </a>
     </div>
   </div>
 </template>
 
-<style>
+<style lang="css" scoped>
 .project-card__content {
   display: flex;
   flex-direction: column;
@@ -95,11 +115,18 @@ defineProps<{
   cursor: pointer;
 }
 
+.project-card__action .disabled,
+.project-card__action .disabled:hover {
+  background: transparent;
+
+  cursor: not-allowed;
+}
+
 .project-card__action a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 640px) {
   .project-card__details {
     padding-bottom: 0;
   }

@@ -16,7 +16,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 
 <style>
 .project-container {
-  min-height: 60vh;
+  padding-bottom: 5rem;
 }
 
 .project {

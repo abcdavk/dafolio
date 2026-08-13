@@ -1,12 +1,12 @@
 <script setup>
 import { ModalsContainer, useModal } from 'vue-final-modal'
-import ModalConfirm from './ArtPopUp.vue'
+import ImagePopUp from './ImagePopUp.vue'
 const props = defineProps({
   id: String,
   src: String,
 })
 const { open } = useModal({
-  component: ModalConfirm,
+  component: ImagePopUp,
   attrs: {
     src: props.src,
   },

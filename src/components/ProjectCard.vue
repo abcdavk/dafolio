@@ -1,16 +1,25 @@
 <script setup lang="ts">
+import { ModalsContainer, useModal } from 'vue-final-modal'
+import ImagePopUp from './ImagePopUp.vue'
 import type { ProjectBuilder } from '../projects/index'
 import ProjectCardContent from './ProjectCardContent.vue'
 
-defineProps<{
+const props = defineProps<{
   project: ProjectBuilder
 }>()
+
+const { open } = useModal({
+  component: ImagePopUp,
+  attrs: {
+    src: props.project.bannerSrc ?? props.project.iconSrc ?? '',
+  },
+})
 </script>
 
 <template>
   <div class="project-card-container">
     <div v-if="project.bannerSrc" class="project-card project-card--banner">
-      <div class="project-card__banner-wrapper">
+      <div class="project-card__banner-wrapper" @click="() => open()">
         <img
           :src="project.bannerSrc"
           :alt="`${project.title} banner`"
@@ -22,7 +31,7 @@ defineProps<{
     </div>
 
     <div v-else-if="project.iconSrc" class="project-card project-card--icon">
-      <div class="project-card__icon-wrapper">
+      <div class="project-card__icon-wrapper" @click="() => open()">
         <img :src="project.iconSrc" :alt="`${project.title} icon`" class="project-card__icon-img" />
       </div>
 
@@ -33,6 +42,8 @@ defineProps<{
       <ProjectCardContent :project="project" />
     </div>
   </div>
+
+  <ModalsContainer />
 </template>
 
 <style>
@@ -55,6 +66,12 @@ defineProps<{
     box-shadow 0.2s ease;
 }
 
+.pop-image {
+  padding: 0;
+  border: transparent;
+  background: transparent;
+}
+
 .project-card--banner {
   display: flex;
   flex-direction: column;
@@ -64,6 +81,7 @@ defineProps<{
 
 .project-card__banner-wrapper {
   overflow: hidden;
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.2);
 }
 
@@ -100,6 +118,7 @@ defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .project-card__icon-img {
@@ -139,8 +158,17 @@ defineProps<{
     border-radius: 0;
   }
   .project-card--icon {
-    height: 250px;
-    max-height: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .project-card--banner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 414px;
   }
 }
 </style>

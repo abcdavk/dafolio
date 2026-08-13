@@ -22,6 +22,12 @@ defineProps<{
 }
 
 .modal img {
-  max-width: 256px;
+  max-width: 60vw;
+}
+
+@media (max-width: 768px) {
+  .modal img {
+    max-width: 80vw;
+  }
 }
 </style>

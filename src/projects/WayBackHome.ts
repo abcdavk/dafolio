@@ -8,7 +8,6 @@ export default function (): ProjectBuilder {
     iconSrc:
       'https://media.forgecdn.net/avatars/thumbnails/1900/732/256/256/639187693368505764.png',
     primaryBtn: {
-      label: 'Visit',
       href: 'https://www.curseforge.com/minecraft-bedrock/addons/way-back-home-locator-bar-and-waypoint',
     },
   }

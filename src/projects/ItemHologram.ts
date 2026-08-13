@@ -8,7 +8,6 @@ export default function (): ProjectBuilder {
     iconSrc:
       'https://media.forgecdn.net/avatars/thumbnails/1906/102/256/256/639190274091413603.png',
     primaryBtn: {
-      label: 'Visit',
       href: 'https://www.curseforge.com/minecraft-bedrock/addons/item-hologram',
     },
   }
