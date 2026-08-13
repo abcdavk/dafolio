@@ -17,11 +17,22 @@ import ProjectCard from '@/components/ProjectCard.vue'
 <style>
 .project-container {
   padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .project {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  width: min(1000px, 100%);
+}
+
+@media (max-width: 900px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
 }
 </style>

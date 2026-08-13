@@ -154,9 +154,6 @@ const { open } = useModal({
   .project-card-container {
     padding: 12px;
   }
-  .project-card {
-    border-radius: 0;
-  }
   .project-card--icon {
     display: flex;
     flex-direction: column;

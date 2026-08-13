@@ -6,10 +6,6 @@ export default function (): ProjectBuilder {
     title: 'TP Menu with JSON UI',
     description: 'Customizable TP menu for servers/realms',
     bannerSrc:
-      'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/secured-attachments/messaging_message/attachment/3f93e3522bf9b5936f99ee679e8395c6-1774796506650/Screenshot_20260329_220100.png?__cld_token__=exp=1786599720~hmac=7ed51ef5b190adcf13bdc3f815d1096e127875befff48c148723407876e24ce6',
-    primaryBtn: {
-      label: 'Fiverr Client',
-      disabled: true,
-    },
+      'https://fiverr-res.cloudinary.com/image/upload/t_collaboration_hd,q_auto,f_auto/v1/secured-attachments/message/delivery_attachments/5576214803d2f17538303f6d674e3d81-1763271773255/Screenshot%202025-11-16%20123920.png?__cld_token__=exp=1786602922~hmac=8ecdeef034628da21df51f5a4da3852cfae2bc8fc41fb3dc1f1fca6122db0006',
   }
 }
