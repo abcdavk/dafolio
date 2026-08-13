@@ -1,6 +1,7 @@
 <script setup>
 import { ModalsContainer, useModal } from 'vue-final-modal'
 import ImagePopUp from './ImagePopUp.vue'
+import { Image } from '@unpic/vue'
 const props = defineProps({
   id: String,
   src: String,
@@ -15,7 +16,7 @@ const { open } = useModal({
 
 <template>
   <button class="pop-image" @click="() => open()">
-    <img :src="src" />
+    <Image :src="src" />
   </button>
 
   <ModalsContainer />

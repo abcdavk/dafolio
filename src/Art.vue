@@ -3,9 +3,7 @@ import PopImage from './components/PopImage.vue'
 </script>
 
 <template>
-  <div class="center">
-    <h1>Arts</h1>
-  </div>
+  <h1 class="header">Arts</h1>
   <div class="art-container">
     <Vue3Marquee :duration="32" :pause-on-hover="true" class="art-track">
       <PopImage src="/img/arts/photo1.png" />
@@ -32,7 +30,7 @@ import PopImage from './components/PopImage.vue'
   </div>
 </template>
 
-<style>
+<style scoped>
 .art-container {
   min-height: 80vh;
   overflow: hidden;

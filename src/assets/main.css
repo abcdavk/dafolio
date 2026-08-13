@@ -50,6 +50,10 @@ main {
   scroll-behavior: smooth;
 }
 
+.header {
+  padding-top: 32px;
+}
+
 .center {
   display: flex;
   justify-content: center;

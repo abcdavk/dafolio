@@ -4,29 +4,42 @@ import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-  <h1>Projects</h1>
-  <div class="project-container">
-    <div class="project">
-      <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
+  <section>
+    <h1 class="header">Projects</h1>
+    <div class="project-container">
+      <div class="project">
+        <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
+      </div>
     </div>
-  </div>
 
-  <h2>More</h2>
-  <div class="project-container marquee">
-    <Vue3Marquee :duration="32" class="project">
-      <ProjectCard v-for="project in projectsMarquee" :key="project.id" :project="project" />
-    </Vue3Marquee>
-  </div>
+    <span class="decoration-arrow">>>></span>
+    <div class="project-container marquee">
+      <Vue3Marquee :duration="32" class="project">
+        <ProjectCard v-for="project in projectsMarquee" :key="project.id" :project="project" />
+      </Vue3Marquee>
+    </div>
+    <span class="decoration-arrow"><<<</span>
+  </section>
 </template>
 
-<style>
+<style scoped>
+section {
+  padding-bottom: 5rem;
+}
+
+.decoration-arrow {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-bold);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  padding: 24px;
+}
+
 .project-container {
   display: flex;
   justify-content: center;
-}
-
-.project-container .marquee {
-  padding-bottom: 5rem;
 }
 
 .project {

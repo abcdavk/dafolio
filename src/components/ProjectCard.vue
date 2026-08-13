@@ -3,6 +3,7 @@ import { ModalsContainer, useModal } from 'vue-final-modal'
 import ImagePopUp from './ImagePopUp.vue'
 import type { ProjectBuilder } from '../projects/index'
 import ProjectCardContent from './ProjectCardContent.vue'
+import { Image } from '@unpic/vue'
 
 const props = defineProps<{
   project: ProjectBuilder
@@ -20,9 +21,10 @@ const { open } = useModal({
   <div class="project-card-container">
     <div v-if="project.bannerSrc" class="project-card project-card--banner">
       <div class="project-card__banner-wrapper" @click="() => open()">
-        <img
+        <Image
           :src="project.bannerSrc"
-          :alt="`${project.title} banner`"
+          :alt="project.id"
+          :width="495"
           class="project-card__banner-img"
         />
       </div>
@@ -32,7 +34,7 @@ const { open } = useModal({
 
     <div v-else-if="project.iconSrc" class="project-card project-card--icon">
       <div class="project-card__icon-wrapper" @click="() => open()">
-        <img :src="project.iconSrc" :alt="`${project.title} icon`" class="project-card__icon-img" />
+        <Image :src="project.iconSrc" :alt="project.id" class="project-card__icon-img" />
       </div>
 
       <ProjectCardContent :project="project" />
@@ -83,6 +85,8 @@ const { open } = useModal({
   overflow: hidden;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.2);
+  max-width: 495px;
+  max-height: 277px;
 }
 
 .project-card__banner-img {
@@ -90,6 +94,12 @@ const { open } = useModal({
   height: 100%;
   object-fit: cover;
   object-position: center;
+
+  transition: transform 0.2s ease;
+}
+
+.project-card__banner-img:hover {
+  transform: scale(1.03);
 }
 
 .project-card--banner .project-card__content {

@@ -128,6 +128,9 @@ defineProps<{
 }
 
 @media (max-width: 640px) {
+  .project-card__content {
+    min-height: auto;
+  }
   .project-card__details {
     padding-bottom: 0;
   }
