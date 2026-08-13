@@ -1,24 +1,32 @@
 <script setup lang="ts">
-import { projects } from '@/projects'
+import { projects, projectsMarquee } from '@/projects'
 import ProjectCard from '@/components/ProjectCard.vue'
 </script>
 
 <template>
-  <div class="center">
-    <h1>Projects</h1>
-  </div>
+  <h1>Projects</h1>
   <div class="project-container">
     <div class="project">
       <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
     </div>
   </div>
+
+  <h2>More</h2>
+  <div class="project-container marquee">
+    <Vue3Marquee :duration="32" class="project">
+      <ProjectCard v-for="project in projectsMarquee" :key="project.id" :project="project" />
+    </Vue3Marquee>
+  </div>
 </template>
 
 <style>
 .project-container {
-  padding-bottom: 5rem;
   display: flex;
   justify-content: center;
+}
+
+.project-container .marquee {
+  padding-bottom: 5rem;
 }
 
 .project {
