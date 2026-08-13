@@ -1,6 +1,6 @@
 <template>
-  <div class="diagonal-frame">
-    <div class="cta-section-container center" id="fiverr-cta">
+  <div class="diagonal-frame" id="fiverr-cta">
+    <div class="cta-section-container center">
       <div class="fiverr-cta cta-section">
         <h2>Let's Build Something Amazing</h2>
 

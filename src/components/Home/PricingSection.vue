@@ -120,14 +120,6 @@
   cursor: pointer;
 }
 
-.pricing-card:hover {
-  scale: 106%;
-}
-
-.pricing-card--featured {
-  transform: translateY(-8px);
-}
-
 .pricing-card__header h3 {
   margin: 0;
   font-size: 1.7rem;
